@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table 01</title>
+</head>
+<body>
+    <!-- table -> 페이지의 레이아웃 잡는 용도(초창기에)
+         게시판 구성할때의 용도로 현재는 많이 쓰임 -->
+    <table border="1"> <!--border="" 구분을 위한-->
+        <tr> <!-- 한 행을 구성하기 위한 태그-->
+            <th>번호</th> <!-- 헤더컬럼 구성하는 용도-->
+            <th>제목</th>
+            <th>글쓴이</th>
+            <th>날짜</th>
+        </tr>
+        <tr>
+            <td>1</td><!--테이블의 데이터를 구성하는 용도-->
+            <td>오늘은 맑음</td>
+            <td>당산맨</td>
+            <td>2022-04-15</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>편백나무 스프레이</td>
+            <td>건강왕</td>
+            <td>2020-05-05</td>
+        </tr>
+    </table>
+
+    <!-- html5 : Semantic tag 적극적으로 사용하도록 권장
+         태그의 사용목적 자체를 명시해주는 태그 -->
+    <table border="1">
+        <thead> <!-- 결과는 위에와 똑같지만 명확하게 어떤 용도인지 구분할 수 있음 (head 부분이고 body부분이고)-->
+            <tr> 
+                <th>번호</th>
+                <th>제목</th>
+                <th>글쓴이</th>
+                <th>날짜</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>오늘은 맑음</td>
+                <td>당산맨</td>
+                <td>2022-04-15</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>편백나무 스프레이</td>
+                <td>건강왕</td>
+                <td>2020-05-05</td>
+            </tr>
+        </tbody>
+
+    </table>
+</body>
+</html>

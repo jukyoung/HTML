@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+              <th colspan="3" align="center">회원 가입 정보 입력</th>   
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="right">아이디</td>
+                <td colspan="3">
+                    <form action="/sendForm.jsp" method="post">
+                        <input type="text" name="id" >
+                        <button type="button">중복확인</button>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">패스워드</td>
+                <td>
+                    <input type="password" name="pw">
+                </td>
+            </tr>
+            <tr>
+                <td align="right">이름</td>
+                <td>
+                    <input type="text" name="name">
+                </td>
+            </tr>
+            <tr>
+                <td align="right">전화번호</td>
+                <td>
+                    <select name="phone">
+                        <option value="02">02</option>
+                        <option value="031">031</option>
+                        <option value="032">032</option>
+                        <option value="010">010</option>
+                        <option value="011">011</option>
+                    </select>
+                    -
+                    <input size="5" type="text" maxlength="4" name="phone1"> -
+                    <input size="5" type="text" maxlength="4" name="phone2">
+                </td>
+            </tr>
+            <tr>
+                <td align="right">이메일</td>
+                <td>
+                    <input type="email" name="email">
+                </td>
+            </tr>
+            <tr>
+                <td align="right">우편번호</td>
+                <td>
+                    <input type="text">
+                    <a href="https://www.epost.go.kr/search.RetrieveIntegrationNewZipCdList.comm" target="_blank">
+                        <button type="button">찾기</button>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">주소1</td>
+                <td>
+                    <input size="50" type="text" name="adress1">
+                </td>
+            </tr>
+            <tr>
+                <td align="right">주소2</td>
+                <td>
+                    <input size="50" type="text" name="adress2">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                        <button type="button">회원가입</button>
+                        <button type="reset">다시 입력</button>
+                    </form>
+                        
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

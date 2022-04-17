@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+</head>
+<body>
+    <!-- <input> : 사용자의 입력값을 받기 위해 사용하는 요소 -->
+    <input type ="text"> <!--input의 default는 text-->
+    <!--placeholder : 어떤 값을 입력할지 안내해주는 역할-->
+    <input type ="text" placeholder="id 입력"> 
+    <!-- value : input 창에 실제로 입력되는 데이터-->
+    <input type ="text" value="abc123">
+    <!-- readonly : 읽기 전용 -->
+    <input type="text" value="abc123" readonly>
+    <!-- 입력값 길이 조정 -->
+    <input type="text" maxlength="4">
+
+    <p>input password</p>
+    <!-- password 타입은 비밀번호 안나타내게 하듯이 하는것-->
+    <input type="password">
+
+    <p>input email</p>
+    <input type="email">
+    <!-- 사용자의 입력값을 선택으로 받는 것 (default 는 여러개 선택 가능) 
+       -> 여러개의 값 중 하나만 체크하게끔 하고 싶을때 사용
+       똑같은 name 값을 부여하면 하나만 체크 가능
+    checked : 기본으로 이 항목을 선택해 둠-->
+    <p>input radio</p>
+    <input type="radio" name="hobby" checked>등산
+    <input type="radio" name="hobby">수영
+    <input type="radio" name="hobby">서핑
+
+    <!-- 여러개의 선택지에서 여러개의 선택값을 받고 싶다면
+         checkbox -->
+         <p>input checkbox</p>
+         <input type="checkbox" name="dinner">족발
+         <input type="checkbox" name="dinner">치킨
+         <input type="checkbox" name="dinner">국밥
+
+    <!-- select : 여러개의 옵션값을 미리 깔아두고 
+        사용자가 선택하게끔 하는 입력방식-->
+    <p>Phone</p>
+    <select name="phone">
+        <option value="010">010</option>
+        <option value="011">011</option>
+        <option value="017">017</option>
+        <option value="018">018</option>
+    </select> -
+    <input type="text" maxlength="4"> -
+    <input type="text" maxlength="4">
+    
+    <p>date</p>
+    <!-- 날짜 -->
+    <input type="date">
+
+    <p>color</p>
+    <!-- 사용자가 원하는 색상 값 -->
+    <input type="color">
+    
+    <p>range</p>
+    <!-- 범위 조절 음량 조절 같은-->
+    <input type="range">
+
+    <p>button</p>
+    <!-- 버튼 안에 넣어줄 값 value 값으로 지정해주기-->
+    <input type="button" value="Button">
+    <button >button2</button>
+
+    <p>입력값</p>
+    <!-- 일반적으로 한 줄짜리 입력을 받을때 사용 -->
+    <input type="text">
+    <!-- textarea : 여러 줄의 텍스트 입력값을 받을 때 사용 default 로 사이즈를 조정할 수 있게 함-->
+    <textarea></textarea>
+    <!-- 넓이 높이 지정 / resize: none 사이즈조정 x-->
+    <textarea style="width:300px; height: 300px; resize: none" placeholder="내용입력"></textarea>
+
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1" width="600px" height="500px">
+      <thead>
+          <tr align="center">
+              <th colspan="2">자유게시판 글 작성하기</th>
+          </tr>
+          <tr>
+              <th width="15%">
+                  <select name="event">
+                    <option value="뉴스">뉴스</option>
+                    <option value="유머">유머</option>
+                    <option value="공포">공포</option>
+                    <option value="감동">감동</option>
+                    <option value="영상">영상</option>  
+                  </select>
+              </th>
+              <th width="85%" align="left">
+                  <input size="70" type="text"placeholder="글 제목을 입력하세요.">
+              </th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td colspan="2">
+                  <textarea style="width:600px; height:400px; resize:none" placeholder="글 내용을 입력하세요"></textarea>
+              </td>
+          </tr>
+          <tr align="right">
+             <td colspan="2">
+                <a href="http://127.0.0.1:5500/html/board_exam01.html" target="_blank">
+                    <button type="button">목록으로</button> 
+                    <button type="button">작성완료</button>
+                </a>
+                
+             </td> 
+          </tr>
+      </tbody>
+    </table>
+</body>
+</html>
