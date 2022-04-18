@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 박스01</title>
+    <style>
+        /* 로그인 박스 틀 */
+        .loginBox{
+            width: 300px;
+            padding: 10px;
+            margin: auto; /* 바깥여백을 이용해서 양쪽의 여백을 맞춰줌 
+                             : 페이지 중앙으로 (가운데 정렬) 이동*/
+            border: 1px solid grey;
+            text-align: center;  /* 텍스트 값을 정렬 하겠다 */
+        }
+        /* 사용자 입력 부분 */
+        .inputLogin > input {
+            width: 200px;
+            padding: 5px;      
+        }
+        .inputLogin{
+            margin: 10px;
+        }
+        /* 버튼 */
+        .btnBox > button{
+            width: 200px;
+            border: none; /*border 없애기*/
+            padding: 5px;
+            border-radius: 3px; /* 각 진 부분 끝을 둥글게 */
+            background-color: darkseagreen;
+        }
+        /* a 태그 */
+        .linkBox > a{
+            text-decoration: none;
+            color: black;
+        }
+           
+    </style>
+</head>
+<body>
+    <div class="loginBox">
+        <div class="titleBox">
+           <h3>로그인</h3>
+        </div>
+        <div class="inputBox">
+            <div class="inputLogin">
+               <input type="text" placeholder="id">
+            </div>
+            <div class="inputLogin">
+                <input type="password" placeholder="pw">
+            </div>
+        </div>
+        <div class="btnBox">
+            <button type="button">로그인</button> <!-- border 가 기본적으로 있음 없애고 싶으면 없애기-->
+        </div>
+        <div class="linkBox">
+            <a href="#">아이디 / 비밀번호 찾기</a>
+        </div>
+    </div>
+</body>
+</html>
