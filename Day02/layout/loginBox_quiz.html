@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 박스 과제</title>
+    <style>
+        .loginBox{
+            width: 450px;
+            height: 200px;
+            margin: auto;
+            border: 1px solid grey;
+        }
+        .title{
+            text-align:center;
+        }
+        .inputText>input{
+            padding: 8px;
+            width: 300px;
+            
+        }
+        .inputText{
+            margin: 5px;
+        }
+        .inputText> button{
+            float: right;
+            width: 25%;
+            height: 75px;
+            border: none;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: darkseagreen;
+            margin-right: 5px;
+        }
+        .linkBox>a{
+            text-decoration: none;
+            color: black;
+        }
+        .linkBox{
+            margin-top: 12px;
+            text-align: center;
+        }
+            
+    </style>
+</head>
+<body>
+    <div class="loginBox">
+        <div class="title">
+            <h1>로그인</h1>
+        </div>
+        <div class="inputLogin">
+            <div class="inputText">
+                <input type="text" placeholder="id">
+                <button type="button">로그인</button>
+            </div>
+            <div class="inputText">
+                <input type="password" placeholder="pw">
+            </div>
+        </div>
+        <div class="linkBox">
+            <a href="#">아이디/ 비밀번호 찾기</a>
+        </div>
+    </div>
+</body>
+</html>
