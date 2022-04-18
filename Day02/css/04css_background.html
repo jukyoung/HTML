@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Style</title>
+    <style>
+        body{
+            background-image: url("/multimedia/피글렛.jpg");/*백그라운드의 이미지 지정*/
+            background-size: cover; /*양쪽 끝이 다 맞춰지는*/
+        }
+        .box{
+            margin-top: 5px; /* margin : 바깥여백 margin-원하는곳 : 원하는 곳에 여백 주기*/
+            padding : 5px; /*padding : 안쪽여백 border 기준으로 안쪽으로 여백*/
+            border: 5px dotted blue; /*선의 종류(동글 점 solid : 그냥 선), 선의 굵기 5px , 선의 색*/
+            background-color: aquamarine; /*배경색 패딩까지 줌*/
+            background-clip: content-box; /*배경색을 컨텐츠까지만 줄건지 패딩까지 줄건지*/
+        }
+    </style>
+</head>
+<body> <!-- body 태그 한테도 style 값 주는거 가능-->
+    <div class="box">Hello World Hello Java Hello HTML</div>
+</body>
+</html>

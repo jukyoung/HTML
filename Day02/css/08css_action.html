@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응 선택자</title>
+    <style>
+        /* 
+          반응 선택자 : 사용자의 움직임에 따라서 달라지는 선택자
+          
+          선택자:active -> 사용자가 해당 태그에 마우스를 클릭했을 때 선택이 됨
+
+          선택자:hover -> 마우스가 해당 요소 위에 올라가 있을 때 선택
+
+          선택자:focus -> 해당 요소가 활성화된 상태이거나 클릭된 상태
+
+          선택자:disabled -> 해당 요소가 비활성화된 상태라면 
+
+          선택자:checked -> 해당 요소가 체크되어있는 상태라면
+
+        */
+
+    p:active { background-color: bisque; }
+    p:hover { color:cornflowerblue; }
+    input:focus { background-color: dodgerblue; }
+    input:disabled { background-color:  orange; }
+    input:checked {width: 50px; height: 50px;}
+    </style>
+</head>
+<body>
+    <h2></h2>
+    <div>
+        <p>Test 1입니다.</p>
+        <p>Test 2입니다.</p>
+        <p>Test 3입니다.</p>
+        <p>Test 4입니다.</p>
+        <p>Test 5입니다.</p>
+        <span>Test 6입니다.</span>
+
+        <br><input type="text"><br>
+        <input type="text" disabled><br> <!--disabled : 태그 안에 붙이면 이 태그를 비활성화 -->
+        <input type="checkbox">
+
+    </div>
+</body>
+</html>

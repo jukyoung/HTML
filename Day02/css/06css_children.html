@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자식/후손 선택자</title>
+    <style>
+        /*
+           자식 / 후손 선택
+
+           자식 선택자 : 부모요소를 기준으로 바로 아래 요소들
+           부모선택자 > 자식선택자 {설정 내용;}
+
+           후손 선택자 : 부모요소를 기준으로 아래의 모든 요소
+           부모선택자 자식선택자 {설정 내용;}
+
+           자식을 제외한 후손 선택
+           부모선택자 * 후손선택자 {설정 내용;}
+
+
+           ** 스타일 속성 중에서 몇몇 속성의 경우에는 상속이 적용되서 
+            부모에게 적용된 속성이 자식 요소한테도 모두 적용이 된다. 예) color
+        */
+        #test1 > h4 {background-color: cornflowerblue;}
+        #test1 > * {border: 1px solid black;} 
+
+        #test1 h4 {color: deeppink;}
+        #test1 > ul * {background-color: yellow;}
+
+        #test1 * h4 {color: red;}
+
+        /*
+         자식 요소를 기준으로 해서 사용하는 선택지
+          first-child : 첫번째 자식
+          last-child : 마지막 자식
+          nth-child() : ~번째 자식 // even : 짝수 odd: 홀수
+
+        */
+        h3:first-child{ background-color: darkgoldenrod;}
+        h3:last-child {background-color: bisque;}
+        h3:nth-child(3) {background-color: darksalmon;}
+        h3:nth-child(even) {color: cornflowerblue;}
+        h3:nth-child(odd) {color: green;}
+
+    </style>
+</head>
+<body>
+    <h2>Exam02</h2>
+    <div id="test2">
+        <h3>자식 1입니다.</h3>
+        <h3>자식 2입니다.</h3>
+        <h3>자식 3입니다.</h3>
+        <h3>자식 4입니다.</h3>
+        <h3>자식 5입니다.</h3>
+        <h3>자식 6입니다.</h3>
+    </div>   
+    
+    <!--<h2>Exam01</h2>
+    <div id="test1">
+        <h4>자식 1 입니다.</h4>
+        <h4>자식 2 입니다.</h4>
+        <ul>자식 3 입니다.
+            <li>div의 후손이면서 ul의 자식 1 입니다.</li>
+            <li>div의 후손이면서 ul의 자식 2 입니다.
+                <h4>div의 후손이면서 li의 자식입니다.</h4>
+            </li>
+        </ul>
+    </div>
+-->
+    
+</body>
+</html>

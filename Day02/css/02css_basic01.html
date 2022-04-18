@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본선택자</title>
+    <style>
+        /* 전체 선택자(*) : 모든 html 태그를 선택 */
+        *{
+            color:skyblue; 
+        }
+        /* 태그 선택자 : 태그의 이름을 통해서 요소를 선택 */
+        p{
+            font-size: 30px;
+        }
+        p, div{ /* 여러개의 태그를 하고 싶을때 콤마로 연결*/
+            font-weight: bold;
+        }
+
+        /* id 선택자(#) : 태그에 고유한 id 값을 부여해서 선택 
+        class 선택자(.) : 태그에 class 값을 부여해서 선택 */
+
+        #test01{ background-color: yellow;}
+        #test02{ background-color: orange;}
+
+        .test{font-family: 'Times New Roman', Times, serif;}
+
+    </style>
+</head>
+<body>
+    <!--id : 하나의 요소에 고유한 값으로 부여  -->
+    <p id="test01">Test01</p>
+    <p id="test02">Test02</p>
+    <!--class : 하나의 그룹을 만들어 여러개의 요소를 묶어줄 때 사용-->
+    <div class="test">Test03</div>
+    <div class="test">Test04</div>
+
+
+    <!--<p>Test01</p>
+    <p>Test02</p>
+    <div>Test03</div>
+    <div>Test04</div>-->
+</body>
+</html>
