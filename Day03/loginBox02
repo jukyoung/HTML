@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .loginBox{
+            width: 300px;
+            padding: 5px;
+            margin: auto;
+            border: 1px solid grey;
+        }
+        .titleBox{
+            text-align: center;
+        }
+        .titleBox >h3{
+            margin-top: 0px;
+        }
+        /*
+          contentBox 안의 요소한테 float을 주면 요소들이 부여하게 되면서
+          원래의 흐름에서 벗어나서 요소들의 높이 값을 인식하지 못하게 됨
+          뒤따라오는 요소가 제대로 배치되지를 못하고 float된 요소들의 영향을 받게 됨
+          
+          float된 요소를 감싸고 있는 부모요소한테 overflow 속성값 주기
+          overflow : hidden -> 자신의 사이즈(높이)만큼만 사이즈를 차지하고 만약에
+          넘치는 컨텐츠가 있으면 숨겨버리겠다는 속성
+          -> 이 속성을 부여하게 되면 본인이 가지고 있는 요소들을 스캔해서
+          float된 속성을 가진 요소가 있다라면 그 요소들의 높이 값을 계산해서
+          본인의 높이값으로 인식할 수 있게 됨
+
+        */
+        .contentBox{
+            overflow: hidden;
+        }
+        .inputBox{
+            width: 70%;
+            float: left;
+        }
+        .loginInput{
+            width: 90%;
+            margin-bottom: 5px;
+        }
+        .loginInput >input{
+            width: 100%;
+            padding: 5px;
+        }
+        .btnBox{
+            width: 30%;
+            float: left;
+        }
+        .btnBox > button{
+            width: 100%;
+            padding: 20px;
+            background-color: darkslategrey;
+            border: none;
+            border-radius: 3px;
+        }
+        .linkBox{
+            text-align: center;
+        }
+        .linkBox > a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="loginBox">
+        <div class="titleBox">
+            <h3>로그인</h3>
+        </div>
+        <div class="contentBox">
+            <div class="inputBox">
+                <div class="loginInput">
+                    <input type="text" placeholder="id">
+                </div>
+                <div class="loginInput">
+                    <input type="password" placeholder="pw">
+                </div>
+            </div> 
+            <div class="btnBox">
+                <button type="button">로그인</button>
+            </div> 
+        </div>
+        <div class="linkBox">
+            <a href="#">아이디 / 비밀번호 찾기</a>
+        </div>
+    </div>
+</body>
+</html>
