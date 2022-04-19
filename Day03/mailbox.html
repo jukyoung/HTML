@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이메일</title>
+    <style>
+        .mailBox{
+            width: 300px;
+            height: 200px;
+            padding: 10px;
+            border:  1px solid black;
+            overflow-y: scroll; /* y축으로만 줌 넘쳐나면 스크롤 만들어서 보게 하라*/
+            /*x축으로 넘치면 overflow-x*/
+        }
+        .mailTbl{ 
+            width: 100%; /*부모요소 기준으로 100%*/
+        }
+        .mailTbl th{ 
+            border-bottom:  1px solid black;
+            /* mailTbl> th 하면 안됨 테이블이 가지고 있는 자식 thead tbody
+            tr th img 는 mailTbl의 후손임 > 하면 mailTbl 자식 중에서 th 이기 때문에 안됨
+            띄어쓰기 하면 모든 후손중에서 th를 선택하는것 */
+            padding: 10px;
+        }
+        #mailImg{
+            width: 30px;
+            vertical-align: middle; /* 수직정렬 */
+            /*vertical-align -> 테이블 셀 안 / inline 요소 만 쓸 수 있음*/
+        }
+        .mailTbl td{
+            border-bottom: 1px dashed black ;
+        }
+        .mailTbl tr:last-child > td{
+            border-bottom: none;
+            /* tr: last-of-type을 사용해도 됨
+               tr: nth-last-child(1) 마지막에서 첫번째 이렇게 해도 됨 */
+        }
+        
+        .mailTbl td:nth-child(1){
+            width: 10%;
+        }
+    </style>
+</head>
+<body>
+    <div class="mailBox">
+        <table class="mailTbl">
+            <thead>
+                <tr> 
+                    <th colspan="2">
+                    <img id="mailImg" src="/multimedia/email.png">
+                     메일박스
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> <input type="checkbox"> </td> 
+                    <td> <strong>Tom</strong> <br> 
+                        Hello, this is Tom.
+                    </td>
+                </tr>
+                <tr>
+                    <td> <input type="checkbox"> </td>
+                    <td> <strong>Sam</strong> <br> 
+                        This is Friday.
+                    </td>
+                </tr>
+                <tr>
+                    <td> <input type="checkbox"></td>
+                    <td><strong>Chloe</strong>
+                        <br> I love java!
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"> </td>
+                    <td> <strong>Alley</strong>
+                        <br> Css is my life..
+                    </td>
+                </tr>
+                <tr>
+                    <td> <input type="checkbox"> </td>
+                    <td>
+                       <strong> Wilson</strong>
+                        <br> Is it rainy yet?
+                    </td>
+                </tr>
+                <tr>
+                    <td> <input type="checkbox"> </td>
+                    <td>
+                       <strong> Elley</strong>
+                        <br> Hi~? How are you guys!...
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

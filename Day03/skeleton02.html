@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Square+Peg&family=Whisper&display=swap" rel="stylesheet">
+    <title>레이아웃 1</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .wrapper{
+            width: 800px;
+        }
+        /* header 영역 */
+        .header{
+            height: 200px;
+        }
+        /*
+            float : 요소들을 공중에 띄우는 속성
+            -> div의 block 속성 무시
+            -> float 원래 레이아웃을 잡는 용도로 나온 속성x    
+
+        */
+        #logoImg{
+            width: 90%;
+            height: 180px;
+            padding-top: 5px;
+        }
+        .header-contents:first-child{
+            float: left;
+            width: 30%; /*border 값때문에 칸이 내려옴 box-sizing 
+                             border-box를 통해서 border를 포함해서 계산하게 하기*/
+            height: 200px;
+            text-align: center;
+        }
+        .header-contents:last-child{
+            float:left;
+            width: 70%;
+            height: 200px;
+            padding-left: 15px;
+        }
+        #titleImg{
+            width: 100%;
+            height: 200px;
+        }
+        /* navi 영역 */
+        
+        .naviBox{
+            line-height: 30px;
+            height: 30px;
+            list-style-type: none; /*원하는 스타일의 list 를 만들 수 있음*/
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .naviBox li{
+            float:left;
+            width: 25%;
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: black;
+            
+        }
+        .naviBox > a{
+            color: white;   
+        }
+        .naviBox li:hover{
+            background-color: grey;
+        }
+        /* body 영역 */
+        .body{
+            overflow: hidden;
+        }
+        .body-contents{
+            float:left;
+            height: 600px;
+        }
+        /* contents 영역 */
+        #contents{
+            width: 70%;
+        }
+        /* 갤러리 영역 */
+        .galBox{
+            overflow: hidden;
+            height: 100%;
+            padding: 5px;
+            font-family: 'Whisper', cursive;
+        }
+        .gal-inner{
+            float: left;
+            width: 50%;
+            height: 50%;
+        }
+        div[class*=gal-img]{
+            height: 70%;
+            padding: 8px;
+        }
+        div[class*=gal-img]>img{
+            width: 100%;
+            height: 100%;
+        }
+        div[class*=gal-txt]{
+            height: 30%;
+            padding: 5px;
+        }
+        p[class*=gal-txt]{
+            margin: 0px;
+        }
+        .gal-txt-title{
+            font-weight: bold;
+            font-size: 25px;
+           
+        }
+        .gal-txt-content{
+            font-size: 18px;
+        }
+
+        /* user 영역 */
+        #user{
+            width: 30%;
+        }
+        /* 로그인 영역 */
+        .loginBox{
+            height:  40%;
+            padding: 5px;
+            margin: auto;
+            margin-top: 20px;
+        }
+        .titleBox{
+            text-align: center;
+        }
+        .titleBox >h3{
+            margin-top: 0px;
+        }
+        .contentBox{
+            overflow: hidden;
+        }
+        .inputBox{
+            width: 70%;
+            float: left;
+        }
+        .loginInput{
+            width: 90%;
+            margin-bottom: 5px;
+        }
+        .loginInput >input{
+            width: 100%;
+            padding: 5px;
+        }
+        .btnBox{
+            width: 30%;
+            height: 68px;
+            line-height: 68px; /* 버튼을 감싸는 틀한테  수직 정렬*/
+            float: left;
+        }
+        .btnBox > button{
+            width: 100%;
+            padding: 10px;
+            background-color: darkslategrey;
+            border: none;
+            border-radius: 3px;
+        }
+        .linkBox{
+            text-align: center;
+        }
+        .linkBox > a {
+            text-decoration: none;
+            color: black;
+        }
+        /* 이메일 박스 영역 */
+        .mailBox{
+            height: 340px;
+            padding: 10px;
+            overflow-y: scroll; 
+        }
+        .mailTbl{ 
+            width: 100%; /*부모요소 기준으로 100%*/
+        }
+        .mailTbl th{ 
+            border-bottom:  1px solid black;
+            padding: 10px;
+        }
+        #mailImg{
+            width: 30px;
+            vertical-align: middle; 
+        }
+        .mailTbl td{
+            border-bottom: 1px dashed black ;
+        }      
+        .mailTbl td:nth-child(1){
+            width: 10%;
+        }
+        .mailTbl tr:nth-last-child(1) > td {
+            border-bottom: none;
+        }
+        /* footer 영역 */
+        .footer{
+            height: 200px;
+            overflow: hidden;
+            background-color: lightgrey;
+        }
+        .ft-ul{
+            float:left;
+            width: 33.33%;
+            height: 100%;
+            margin: 0;
+            padding-left: 10px;
+            padding-top: 20px;
+            list-style-type: none;
+        }
+        .ft-ul a{
+            color: black;
+            text-decoration: none;
+        }
+        .ft-ul li{
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="header">
+            <div class="header-contents">
+                <img id="logoImg" src="/multimedia/boat-gefdcb2b38_1280.png">
+            </div>
+            <div class="header-contents">
+                <img id="titleImg" src="/multimedia/welcome-gde29e6462_1280.png">
+            </div>
+           
+        </div>
+        <div class="navi">
+            <ul class="naviBox">
+                <a href="#"><li>home</li></a>
+                <a href="#"><li>company</li></a>
+                <a href="#"><li>product</li></a>
+                <a href="#"><li>service</li></a>
+            </ul>
+        </div>
+        <div class="body">
+            <div class="body-contents" id="contents"><div class="galBox"> <!-- 전체 영역에 - 4개의 영역 -> 이미지 / 텍스트(2개로 나누기)-->
+                <div class="gal-inner">
+                    <div class="gal-img-1">
+                        <img src="/multimedia/ocean-g9430d9d1e_1920.jpg">
+                    </div>
+                    <div class="gal-txt-1">
+                        <p class="gal-txt-title">Ocean</p> <!-- p 태그는 원래 마진이 있음-->
+                        <p class="gal-txt-content">Beautiful night-ocean...</p>
+                    </div>
+                </div>
+                <div class="gal-inner">
+                    <div class="gal-img-2">
+                        <img src="/multimedia/seashells-gf69609972_1920.jpg">
+                    </div>
+                    <div class="gal-txt-2">
+                        <p class="gal-txt-title">Seashells</p>
+                        <p class="gal-txt-content">Colorful seashells...</p>
+                    </div>
+                </div>
+                <div class="gal-inner">
+                    <div class="gal-img-3">
+                        <img src="/multimedia/waves-g684da2ab0_1920.jpg">
+                    </div>
+                    <div class="gal-txt-3">
+                        <p class="gal-txt-title">Waves</p>
+                        <p class="gal-txt-content">Amazing waves..</p>
+                    </div>
+                </div>
+                <div class="gal-inner">
+                    <div class="gal-img-4">
+                        <img src="/multimedia/zakynthos-ge898aaae9_1920.jpg">
+                    </div>
+                    <div class="gal-txt-4">
+                        <p class="gal-txt-title">Wow</p>
+                        <p class="gal-txt-content">Wonderful sight..</p>
+                    </div>
+                </div>
+            </div></div>
+            <div class="body-contents" id="user">
+                <div class="loginBox">
+                    <div class="titleBox">
+                        <h3>로그인</h3>
+                    </div>
+                    <div class="contentBox">
+                        <div class="inputBox">
+                            <div class="loginInput">
+                                <input type="text" placeholder="id">
+                            </div>
+                            <div class="loginInput">
+                                <input type="password" placeholder="pw">
+                            </div>
+                        </div> 
+                        <div class="btnBox">
+                            <button type="button">로그인</button>
+                        </div> 
+                    </div>
+                    <div class="linkBox">
+                        <a href="#">아이디 / 비밀번호 찾기</a>
+                    </div>
+                </div>
+                <div class="mailBox">
+                    <table class="mailTbl">
+                        <thead>
+                            <tr> 
+                                <th colspan="2">
+                                <img id="mailImg" src="/multimedia/email.png">
+                                 메일박스
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox"> </td> 
+                                <td><strong>Tom</strong> <br> 
+                                    Hello, this is Tom.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"> </td>
+                                <td><strong>Sam</strong> <br> 
+                                    This is Friday.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td><strong>Chloe</strong>
+                                    <br> I love java!
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"> </td>
+                                <td> <strong>Alley</strong>
+                                    <br> Css is my life..
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <input type="checkbox"> </td>
+                                <td>
+                                   <strong>Wilson</strong>
+                                    <br> Is it rainy yet?
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <input type="checkbox"> </td>
+                                <td>
+                                   <strong>Elley</strong>
+                                    <br> Hi~? How are you guys!...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <ul class="ft-ul">
+                <a href="#"><li><strong>Features</strong></li></a>
+                <a href="#"><li>Overview</li></a>
+                <a href="#"><li>Design</li></a>
+            </ul>
+            <ul class="ft-ul">
+                <a href="#"> <li><strong>Get Started</strong></li></a>
+                <a href="#"> <li>Tutorials</li></a>
+                <a href="#">  <li>Guides</li></a>
+            </ul>
+            <ul class="ft-ul">
+                <a href="#"> <li><strong>About</strong></li></a>
+                <a href="#"> <li>Stories</li></a>
+                <a href="#">  <li>Community</li></a>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>

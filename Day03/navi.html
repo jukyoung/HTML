@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{ box-sizing: border-box;} /*border 값 포함한 25%의 너비를 가짐*/
+        .naviBox{
+            line-height: 30px;
+            height: 30px;
+            list-style-type: none; /*원하는 스타일의 list 를 만들 수 있음*/
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .naviBox li{
+            float:left;
+            width: 25%;
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: black;
+            
+        }
+        .naviBox > a{
+            color: white;   
+        }
+        .naviBox li:hover{
+            background-color: grey;
+        }
+    </style>
+</head>
+<body>
+    <!--list를 이용해서 구현-->
+    <ul class="naviBox">
+        <a href="#"><li>home</li></a>
+        <a href="#"><li>company</li></a>
+        <a href="#"><li>product</li></a>
+        <a href="#"><li>service</li></a>
+    </ul>
+</body>
+</html>
