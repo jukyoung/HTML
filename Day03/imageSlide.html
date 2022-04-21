@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slide</title>
+    <style>
+        /*#test{
+            width: 100px;
+            height: 100px;
+            background-color: #00000020; 
+            /* 색상코드 뒤에 숫자붙여서(더 작은게 더 투명) 투명하게 만들기
+        }*/
+        *{box-sizing: border-box;}
+        .imgBox{
+            position: relative;
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            margin: auto;   
+        }
+        .imgBox>img{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        .textBox{
+            position: absolute;
+            width: 100%;
+            height: 0;
+            line-height: middle;
+            background-color: #80808040;
+            transition-duration: 1s;
+            overflow: hidden;
+        }
+        .imgBox:hover .textBox{
+            height: 100%;
+        }
+        #text{
+            position: relative;
+            top:25%;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        색상의 투명도는 -> 색상코드뒤에 숫자를 이용해 부여할 수 있음
+        숫자가 높을수록 불투명, 숫자가 낮을수록 투명
+        A:hover B{
+            .......
+        }
+        A 요소 안에 B 요소 사용자가 A요소에 마우스를 올렸을때 
+        B요소 한테 css(style) 줄 수 도 있음
+    -->
+       <div class="imgBox">
+           <img src="/multimedia/bouquet-g2f1d81121_1920.jpg">
+           <div class="textBox">
+               <div id="text">
+                   <strong>Flower</strong>
+                <br> Some text to build on the gallery
+                and make up the bulk of the galley's content.
+            </div>
+            
+        </div>
+       </div>
+</body>
+</html>

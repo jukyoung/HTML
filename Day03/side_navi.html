@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side Navi</title>
+    <!-- position, transition, transform, list 적절히 활용-->
+    <!-- 마우스 모양 바꾸기 cursor 속성 -->
+    <style>
+        *{ box-sizing: border-box; } 
+        body{ 
+            height: 1200px; 
+            margin: 0; /*여백이 있어서 바디에 걸려있는 마진 없애기*/
+        }
+
+        #side_navi{
+            position: fixed; /*페이지를 스크롤해도 같은 위치에 고정된 상태니까*/
+            left: -100px; /*왼쪽으로 밀려나라 (안보이게 숨기는 형태)*/
+            width: 120px;
+            height: 800px;
+            background-color:black;
+            transition-duration: 1s;
+        }
+        #side_navi:hover{ /* 숨겨준 바 튀어나오기 */
+            transform: translate(100px, 0);
+        }
+        #navi-ul{
+            width: 100%; /* 미세한 틈이 있어서 맞추주기 */
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+        #navi-ul > a{
+            text-decoration: none;
+            color: white;
+        }
+        #navi-ul li{
+            padding: 10px;
+        }
+        #navi-ul li:hover{
+            background-color: grey;
+        }
+        #knob{
+            color: white;
+            position: absolute; /*부모기준을 줘서 위치 잡아야하니까..?*/
+            right: 0; /*틀 로부터 0 만큼 떨어져라*/
+            top:50%;
+            transform: translate(0, -50%); /* 요소의 정중앙에 딱 위치하고 싶을때 */
+        }
+        #knob:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="side_navi">
+        <ui id="navi-ul">
+            <a href="#">
+                <li>Home</li>
+            </a>
+            <a href="#">
+                <li>Company</li>
+            </a>
+            <a href="#">
+                <li>Product</li>
+            </a>
+            <a href="#">
+                <li>Service</li>
+            </a>
+        </ui>
+        <div id="knob">▷</div>
+    </div>
+    
+</body>
+</html>

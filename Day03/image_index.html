@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사진 우선순위</title>
+    <style>
+        .imgIndex{
+            width: 800px;
+            height: 600px;
+            border: 1px solid black;
+            margin: auto;
+        }
+        div[class*=imgBox]{
+            width: 400px;
+            height: 200px;
+            margin: 0;
+            transition-duration: 1s;
+            transition-delay: 1s;
+        }
+        div[class*=imgBox] > img{
+            width: 100%;
+            height: 100%;
+            padding: 15px;
+            border: 1px solid black;
+        }
+        .imgBox1{
+            position: relative;
+            top: 80px;
+            left: 70px;
+            z-index:1;
+        }
+        .imgBox1:hover{
+            z-index: 10;
+            transform: rotate(15deg) scale(1.5);
+        }
+        .imgBox2{
+            position: relative;
+            top: -20px;
+            right: -300px;
+            z-index: 2;
+        }
+        .imgBox2:hover{
+            z-index: 11;
+            transform: rotate(15deg) scale(1.5);
+        }
+        .imgBox3{
+            position: relative;
+            left: 100px;
+            bottom: 200px;
+            z-index: 3;
+        }
+        .imgBox3:hover{
+            z-index: 11;
+            transform: rotate(15deg) scale(1.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="imgIndex">
+        <div class="imgBox1">
+            <img src="/multimedia/피글렛.jpg">
+        </div>
+        <div class="imgBox2">
+            <img src="/multimedia/피클레세세.jpg">
+        </div>
+        <div class="imgBox3">
+            <img src="/multimedia/waves-g684da2ab0_1920.jpg">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포지션01</title>
+    <style>
+        /*
+           position : html 요소의 위치를 결정해주는 속성
+
+           - static : 모든 html 요소의 default -> normal flow에 따라서 요소를 위치시킴
+           -> top, left, right, bottom, z-index 속성이 먹히지 않음
+           
+           - relative : normal flow를 따르긴 하되 자기자신 요소를 기준으로 해서
+           top, right, left, bottom 값에 따라서 offset 적용 (음수 값도 줄 수 있음)
+           top / bottom  left / right 둘중에 하나만 사용해야함
+
+           - fixed : normal flow에서 벗어남
+           -> viewport 를 기준으로 해서 위치를 고정시킴 -> 요소 자체가 한 자리에 고정이 됨 
+           (예 : 네이버의 다크모드로 보기, 위로가기 화살표 같은것들)
+           ** viewport : 한 눈에 보이는 화면
+
+           - absolute : normal flow를 벗어남
+           -> static이 아닌 position 값을 가지고 있는 조상 요소를 기준으로 위치
+           -> 조상이 없다면 body 요소를 기준으로 배치함
+         */
+
+         *{box-sizing: border-box;}
+         .outerBox{
+             border: 1px solid black;
+             width: 300px;
+             height: 300px;
+             margin: auto;
+         }
+         .innerBox{
+             position: relative;
+             /* 양수 음수(%도 사용가능) 모두 사용가능 */
+             top: 50%;
+             left: 50%;
+             width: 100px;
+             height: 100px;
+             border: 2px solid blue;
+         }
+         .innerBox2{
+             position: static;
+             border: 2px solid red;
+             width: 100px;
+             height: 100px;
+         }
+    </style>
+</head>
+<body>
+    <div class="outerBox">
+        <div class="innerBox"></div>
+        <div class="innerBox2"></div>
+    </div>
+</body>
+</html>

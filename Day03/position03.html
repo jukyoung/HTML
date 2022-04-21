@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포지션03</title>
+    <style>
+        /*
+           position : html 요소의 위치를 결정해주는 속성
+
+
+           - fixed : normal flow에서 벗어남
+           -> viewport 를 기준(html)으로 해서 위치를 고정시킴 -> 요소 자체가 한 자리에 고정이 됨 
+           (예 : 네이버의 다크모드로 보기, 위로가기 화살표 같은것들)
+           ** viewport : 한 눈에 보이는 화면
+
+         */
+
+         *{box-sizing: border-box;}
+         html{height: 1500px;}
+         .outerBox{
+             border: 1px solid black;
+             width: 300px;
+             height: 300px;
+             margin: auto;
+         }
+         #btnTop{
+             position: fixed;
+             bottom: 3%;
+             right: 3%;
+             padding: 15px;
+             border: none;
+             background-color: black;
+             color: white;
+             border-radius: 5px;
+         }
+         .innerBox{ 
+             position: fixed;
+             bottom: 3%;
+             right: 3%;
+             width: 100px;
+             height: 100px;
+             border: 2px solid blue;
+         }
+         .innerBox2{
+             border: 2px solid red;
+             width: 100px;
+             height: 100px;
+         }
+    </style>
+</head>
+<body>
+    <div class="outerBox">
+        <button id="btnTop" type="button">Top</button>
+        <div class="innerBox"></div>
+        <div class="innerBox2"></div>
+    </div>
+</body>
+</html>

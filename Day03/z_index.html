@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z인덱스</title>
+    <style>
+        /* 
+           가장 마지막에 만들어진 요소가 가장 위쪽으로 올라오는 것이 default
+           z-index : 겹쳐지는 요소들의 우선순위를 결정해주는 속성
+           -> 숫자가 커질수록 우선순위가 높아짐
+           -> static : z-index 영향 안받음
+           보통 가장 우선순위를 낮게 해주고 싶은 경우 -1 값을 주고 사용
+
+           음수 z-index 값을 사용하면 추후에 사용자의 동작에 따라서 우선순위를 올려주고
+           싶어도 제대로 동작 되지 않음
+           (사용자의 동작에 따라 음수로 우선순위를 내려주는 것은 가능)
+        */
+        .outerBox{
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            margin: auto;
+        }
+        .innerBox{
+            position: relative;
+            z-index: 3;
+            width: 100px;
+            height: 100px;
+            background-color: burlywood;
+        }
+        .innerBox:hover{
+            z-index: -1;
+        }
+        .innerBox2{
+            position: relative;
+            z-index: 1;
+            top:-50px;
+            left: 50px;
+            width: 100px;
+            height: 100px;
+            background-color: darksalmon;
+        }
+        .innerBox2:hover{ /* 특정한 동작에 따라 우선순위를 줄 수 있음*/
+            z-index: 99;
+        }
+        .innerBox3{
+            position: relative;
+            z-index: 2;
+            top:-100px;
+            left: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: forestgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="outerBox">
+        <div class="innerBox"></div>
+        <div class="innerBox2"></div>
+        <div class="innerBox3"></div>
+    </div>
+</body>
+</html>

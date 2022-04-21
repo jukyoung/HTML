@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slide풀이</title>
+    <style>
+        *{box-sizing: border-box;}
+        .imgBox{
+            position: relative;
+            height: 200px;
+            width: 200px;
+            border: 1px solid black;
+            margin: auto;
+        }
+        .imgBox >img{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        .txtBox{
+            position: absolute;
+            background-color: #80808050;
+            width: 100%;
+            height: 0;
+            transition-duration: 1s;
+            padding-left: 5px;
+            overflow: hidden; 
+            /*텍스트 사라짐 -> 높이가 0인 상태에서
+              p태그가 가지고 있던 높이가 넘치게됨-> overflow인 상태 따라서 hidden 주면 숨겨져버림 */
+            /* 부모요소인 txtBox의 높이 값이 0이 되면서 0의 높이를 넘어서는 p 태그의 요소가 hidden 되는 상황 */
+         }
+        /* .imgBox>img:hover .txtBox{ 
+            height:200px;
+            
+            안되는 이유: 스페이스바 띄어쓰기 -> 후손선택자를 의미하기 때문에 안됨
+        }*/
+        .imgBox:hover .txtBox{
+           height:200px; /* 이미지 박스가 가지고 있는 후손중에서 txtBox 이므로 가능*/
+           /* height 가 0이였다가(위에 붙어있더가) 200px 로 늘어나면서 내려옴
+            transition-duration: 1s; 을 통해 느리게 보여주기*/
+       }
+        .txtBox > p{
+            position: relative;
+            top: 45px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="imgBox">
+        <img src="/multimedia/bouquet-g2f1d81121_1920.jpg" alt="">
+        <div class="txtBox">
+            <p><strong>Natural</strong><br>
+                Some text to build on the gallery and make up the bulk of the galley's content.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
