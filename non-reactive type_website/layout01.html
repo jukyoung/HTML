@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Kaushan+Script&family=Pacifico&family=Sacramento&display=swap" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Pacifico&family=Sacramento&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script:wght@500&family=Kaushan+Script&family=Pacifico&family=Sacramento&display=swap" rel="stylesheet">  
+  <title>Travel Home</title>
+    <style>
+        *{box-sizing: border-box;}
+        /* 전체 */
+        .main{
+            width: 1300px;
+        }
+        /* header 부분 */
+        .header{
+            height: 300px;
+            width: 100%;
+        }
+        .header-contents{
+            width: 100%;
+            height: 100%;
+        }
+        .header-contents> img{
+            width: 100%;
+            height: 100%;
+        }
+        .textBox{
+            position: absolute;
+            top:5%;
+            left: 42%;
+            margin: auto;
+            width: 300px;
+            height: 200px;
+        }
+        #input{
+            position: relative;
+            top:20%;
+            font-family: 'Dancing Script', cursive;
+            font-size: 150px;
+            text-align: center;
+            margin: 0;
+            color: black;
+        }
+        .textBox1{
+            position: absolute;
+            bottom: 55%;
+            right: 30%;
+            width: 300px;
+            height: 0;
+            text-align: right;
+            overflow: hidden;
+           
+        }
+        /* navi 부분 */
+        .naviBox{
+            line-height: 30px;
+            height: 40px;
+            list-style-type: none; /*원하는 스타일의 list 를 만들 수 있음*/
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border-top: 4px solid black;
+            border-bottom: 4px solid black;
+
+        }
+        .naviBox li{
+            float:left;
+            width: 33.3%;
+            text-align: center;
+            font-family: 'Kaushan Script', cursive;
+            font-size: x-large;
+        }
+        .naviBox > a{
+            color: black;
+        }
+        .naviBox li:hover{
+           color: grey;
+           font-weight: bold;
+           transform: scale(1.5);
+        }
+        /* body 부분 */
+        .body{
+            height: 800px;
+        }
+        .bodyContents{
+            float: left;
+        }
+        #contents{
+            width: 70%;
+            height: 100%;
+        }
+        /* 갤러리 부분 */
+        .galBox{
+            position: relative;
+            width: 800px;
+            height: 1300px;
+            padding: 5px;
+        }
+        .gal-img{
+            border: 3px dashed black;
+            width: 300px;
+            height: 400px;
+            padding: 8px;
+        }
+        .gal-img>img{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+        .gal-inner1{
+            position: absolute;
+            top:1%;
+            left: 10%;
+            z-index: 6;
+        }
+        .gal-inner2{
+            position: absolute;
+            top: 1%;
+            left: 50%;
+            z-index: 7;
+        }
+        .gal-inner3{
+            position: absolute;
+            bottom: 40%;
+            left: 3%;
+            z-index: 3;
+        }
+        .gal-inner4{
+            position: absolute;
+            bottom: 40%;
+            left: 30%;
+            z-index: 8;
+        }
+        .gal-inner5{
+            position: absolute;
+            bottom: 40%;
+            right: 1%;
+            z-index: 4;
+        }
+        .gal-txt{
+            position: absolute;
+            bottom: 5%;
+            right: 5%;
+            width: 300px;
+            height: 0;
+            overflow: hidden;
+            transition-duration: 1s;
+            padding-right: 5px;
+        }
+        div[class*=gal-inner]:hover .gal-txt{
+            height: 100px;
+            z-index: 6;
+        }
+        div[class*=gal-inner]:hover{
+            transform: scale(1.5);
+            z-index: 99;
+        }
+        div[class*=gal-inner]{
+            transition-duration: 1s;
+        }
+        .gal-txt > p{
+            position: relative;
+            top:10px;
+            margin: 0;
+            color: white;
+            font-size: 20px;
+            text-align: right;
+            font-family: 'Kaushan Script', cursive;
+        }
+        #user{
+            width: 30%;
+            height: 100%;
+        }
+        /* 로그인 부분 */
+        .loginBox{
+           height: 30%;
+           width: 300px;
+           padding: 5px;
+           border: 1px solid black;
+           margin-top: 20px;
+       }
+       .title{
+           text-align: center;
+       }
+       .title >h3{
+           margin-top: 10px;
+           font-family: 'Kaushan Script', cursive;
+           font-size: 30px;
+       }
+       .contentBox{
+           overflow: hidden;
+       }
+       .inputBox{
+           width: 70%;
+           margin: 0;
+           float: left;
+       }
+       .loginInput{
+           padding: 3px;
+       }
+       .loginInput > input{
+           padding: 5px;
+       }
+       .btnBox{
+           float: left;
+           width: 30%;
+       }
+       .btnBox >button{
+           width: 80%;
+           margin: 3px;
+           padding: 20px;
+           border: none;
+           border-radius: 10px;
+           font-family: 'Dancing Script', cursive;
+           font-size: 20px;
+           font-weight: bold;
+           background-color: rgb(121, 175, 230);
+       }
+       .linkBox{
+           text-align: center;
+           margin-top: 120px;
+           
+       }
+       .linkBox >a{
+           margin-left: 8px;
+           text-decoration: none;
+           color: black;
+           font-family: 'Dancing Script', cursive;
+           font-size: 20px;
+       }
+       .linkBox:active{
+           font-weight: bold;
+       }
+        .userBox{
+            height: 70%;
+        }
+        /* 공지사항 부분 */
+        .userBox{
+            width: 300px;
+            height: 50%;
+            padding: 10px;
+            border:  1px solid black;
+            overflow-y: scroll;
+            margin-top: 20px;
+        }
+        .aTbl{ 
+            width: 100%;
+        }
+        .aTbl th{ 
+            border-bottom:  1px solid black;
+            padding: 10px;
+            font-family: 'Kaushan Script', cursive;
+            font-size: 30px;
+        }
+        #a-Img{
+            width: 30px;
+            vertical-align: middle;
+        }
+        .aTbl td{
+            border-bottom: 1px dashed black ;
+            padding: 3px;
+        }
+        .aTbl tr:last-child > td{
+            border-bottom: none;
+        }
+        .aTbl td:nth-child(1){
+            width: 13%;
+        }
+        .icon{
+            width: 20px;
+        }
+        .txt{
+            font-family: 'Courgette', cursive;
+            font-size: 18px;
+        }
+        /* mp3 부분 */
+        .mp3{
+           margin-top: 20px;
+           padding: 0;
+           padding-right: 40px;
+        }
+        .mp3>audio{
+            padding-right: 50px;
+            width: 100%;
+        }
+        /* footer 부분 */
+        .footer{
+            height: 100px;
+        }
+        .ft-b{
+            border-top: 2px solid black;
+             height: 200px;
+             overflow: hidden;
+         }
+         .ft-ul{
+             float: left;
+             width: 33.3%;
+             height: 100%;
+             margin: 0;
+             padding-left: 80px;
+             padding-top: 20px;
+             list-style-type: none;
+         }
+         .ft-ul a{
+             color: black;
+             text-decoration: none;
+         }
+         .ft-ul li{
+             height: 55px;
+             font-family: 'Kaushan Script', cursive;
+         }
+         .ft-ul strong{
+             font-size: 25px;
+         }
+        .txt{
+             text-align: center;
+             margin-top: 30px;
+             font-size: 20px;
+             padding-bottom: 30px;
+             border-bottom: 2px solid black;
+         }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="header-contents">
+                <img src="image/seychelles-gd2df22e7f_1920.jpg" id="titleImg">
+                <div class="textBox"> 
+                    <h1 id="input" class="animate__animated animate__rubberBand">Travel</h1>
+                </div>
+            </div>
+        </div>
+        <ul class="naviBox">
+            <a href="#"><li>Travel</li></a>
+            <a href="http://127.0.0.1:5500/travel/photo.html"><li>Photo</li></a>
+            <a href="http://127.0.0.1:5500/travel/video.html"><li>Video</li></a>
+        </ul>
+        <div class="body">
+            <div id="contents" class="bodyContents">
+                <div class="galBox">
+                    <div class="gal-inner1">
+                        <div class="gal-img">
+                            <img src="image/스위스.jpg">
+                        </div>
+                        <div class="gal-txt">
+                            <p><Strong>Swiws</Strong>
+                                <br>Luzern
+                            </p>
+                            
+                        </div>
+                    </div>
+                    <div class="gal-inner2">
+                        <div class="gal-img">
+                            <img src="image/싱가폴.jpg">
+                        </div>
+                        <div class="gal-txt">
+                            <p><strong>Singapore</strong>
+                                <br>Palawan Beach</p>
+                           
+                        </div>
+                    </div>
+                    <div class="gal-inner3">
+                        <div class="gal-img">
+                            <img src="image/에펠탑.jpg">
+                        </div>
+                        <div class="gal-txt">
+                            <p><Strong>France</Strong>
+                            <br>The Eiffel Tower</p>
+                            <p class="gal-txt-content"></p>          
+                         </div>
+                    </div>
+                    <div class="gal-inner4">
+                        <div class="gal-img">
+                            <img src="image/다낭.jpg">
+                        </div>
+                        <div class="gal-txt">
+                            <p><strong>Vietnam</strong>
+                            <br>Da Nang</p>
+                        </div>
+                    </div>
+                    <div class="gal-inner5">
+                        <div class="gal-img">
+                            <img src="image/비행기.jpg">
+                        </div>
+                        <div class="gal-txt">
+                            <p><strong>In the airplane</strong>
+                            <br>With clouds</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="user" class="bodyContents">
+                <div class="loginBox">
+                    <div class="title">
+                        <h3>LOGIN</h3>
+                    </div>
+                    <div class="contentsBox">
+                        <div class="inputBox">
+                            <div class="loginInput">
+                                <input type="text" placeholder="id">
+                            </div>
+                            <div class="loginInput">
+                                <input type="password" placeholder="pw">
+                            </div>
+                        </div>
+                        <div class="btnBox">
+                            <button type="button">OK</button>
+                    </div>
+                    </div>
+                    <div class="linkBox">
+                        <a href="#">Find ID and Password</a>
+                    </div>
+                </div>
+                <div class="userBox">
+                    <table class="aTbl">
+                        <thead>
+                            <tr> 
+                                <th colspan="2">
+                                <img id="a-Img" src="image/megaphone-g815772d9f_1280.png">
+                                Announcement
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td> <input type="image" src="image/tick-g5b088eee0_1280.png" class="icon"> </td> 
+                                <td class="txt"> <strong>Introduce</strong> <br> 
+                                    Hello, this is a community of people who like to travel.....
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="image" src="image/tick-g5b088eee0_1280.png" class="icon"> </td>
+                                <td class="txt"> <strong>Rule</strong> <br> 
+                                    Please create a password of 6 characters including special characters
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="image" src="image/tick-g5b088eee0_1280.png" class="icon"> </td>
+                                <td class="txt"><strong>Special Event</strong>
+                                    <br> 
+                                    We'll send you a trip to America by selecting the coolest photos! Try it now...
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="image" src="image/tick-g5b088eee0_1280.png" class="icon"> </td>
+                                <td class="txt"> <strong>Warning</strong>
+                                    <br> Do not fight with other members on the anonymous bulletin board. You will receive a warning when caught.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="image" src="image/tick-g5b088eee0_1280.png" class="icon">  </td>
+                                <td class="txt">
+                                   <strong> Outstanding member</strong>
+                                    <br> Announcing the best member of the month! right away....
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="image" src="image/tick-g5b088eee0_1280.png" class="icon">  </td>
+                                <td class="txt">
+                                   <strong> Sale Information</strong>
+                                    <br> We will notify you of flight deals. Asiana Airlines flight to Canada at the end of June...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mp3">
+                    <audio src="image/as long as you care [HSW0GI_BnB8].mp3" controls></audio>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="ft-b">
+                <ul class="ft-ul">
+                    <a href="#"><li><strong>Introduce</strong></li></a>
+                    <a href="#"><li>location</li></a>
+                    <a href="#"><li>Contact us</li></a>
+                </ul>
+                <ul class="ft-ul">
+                    <a href="#"><li><strong>Partners</strong></li></a>
+                    <a href="#"><li>Hotel</li></a>
+                    <a href="#"><li>Travel agency</li></a>
+                </ul>
+                <ul class="ft-ul">
+                    <a href="#"> <li><strong>Help</strong></li></a>
+                    <a href="#"> <li>FAQ</li></a>
+                    <a href="#"> <li>Terms of service</li></a>
+                </ul>
+            </div>
+            <div class="txt">
+                <strong> Css website Practice © 2022 – 2022 Travel Company Pte. Ltd., All Rights Reserved.
+                 <br>Travel wants to be the world's leading site for online travel and related social media.</strong>
+            </div>
+            </div>
+    </div>
+</body>
+</html>
