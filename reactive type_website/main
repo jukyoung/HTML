@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Whisper&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Satisfy&family=Whisper&display=swap"
+        rel="stylesheet">
+    <title>City Night</title>
+    <style>
+
+        body {
+            height: 100vh;
+            background-image: url(images/cityscape-ge1cde5d70_1920.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background: url(images/cityscape-ge1cde5d70_1920.jpg) no-repeat center/cover;
+        }
+
+        /* 타이틀 */
+        .text {
+            color: white;
+            font-size: 4vw;
+            position: relative;
+            top: 13%;
+            left: 1%;
+            font-family: 'Kaushan Script', cursive;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .btnBox {
+            padding: 35px;
+            text-align: center;
+            font-family: 'Kaushan Script', cursive;
+        }
+
+        .btnBox>button {
+            margin-top: 10px;
+            padding: 10px;
+            color: white;
+            font-size: 20px;
+        }
+
+        .btnBox>button:hover {
+            transform: scale(1.5);
+        }
+
+        .modal-title {
+            font-size: 35px;
+        }
+
+        /* 네비바 */
+        .nav{
+            color: white;
+        }
+        #navImg {
+            width: 100%;
+        }
+        .navbar-brand {
+            width: 10%;
+        }
+        .nav-link:hover{
+            transform: scale(1.1);
+        }
+
+        .nav-item {
+            font-family: 'Kaushan Script', cursive;
+            font-weight: bold;
+            font-size: 23px;
+        }
+
+        .container-fluid {
+            border-radius: 10px;
+            border: 3px dashed white;
+        }
+        /* 콘텐츠 */
+        .tab-content{
+           background-color: white;
+       }
+       #home-tab, #profile-tab, #contact-tab{
+           color: black;
+           font-weight: bold;
+       }
+       .headTxt{
+        margin-top: 100px;
+        font-family: 'Kaushan Script', cursive;
+        font-size: 6vw;
+        text-align: center;
+       }
+       .headTxt:hover{
+           color: cornflowerblue;
+       }
+       .headTxt2{
+           margin: 20px;
+           font-family: 'Kaushan Script', cursive;
+           text-align: center;
+           font-size: 3vw;
+           color: grey;
+       }
+       #mainImg{
+           width: 80%;
+           display: block;
+           margin: auto;
+           transition-duration: 1s;
+       }
+       .conImg{
+        padding-left: 80px;
+        padding-right: 80px;
+           margin: auto;
+       }
+       #mainImg:hover{
+           transform: scale(1.05);
+       }
+       #conBtn{
+           text-align: center;
+           margin-top: 30px;
+           font-family: 'Kaushan Script', cursive;
+           
+       }
+       #conBtn button{
+           padding: 15px;
+           font-size: 3vw;
+       }
+       /* txt이미지 */
+       .txt1{
+        margin-top: 100px;
+        font-family: 'Kaushan Script', cursive;
+        text-align: center;
+        border-top: 1px solid black;
+        font-size: 4vw;
+       }
+       .txt1>p{
+           margin-top: 15px;
+       }
+       .txt1:hover{
+        color: cornflowerblue;
+       }
+       .txtImg1 >img{
+           width: 80%;
+           transition-duration: 2s;
+       }
+       .txtImg1{
+           overflow: hidden;
+           
+       }
+       .txtImg1 >img:hover{
+           transform: scale(1.1);
+       }
+       .txt2{
+          font-family: 'Kaushan Script', cursive;
+          font-size: 2.5vw;
+          color: rgb(37, 37, 37);
+          margin-top: 20px;
+       }
+       .txtBtn{
+        font-family: 'Kaushan Script', cursive; 
+       }
+       .txtBtn button{
+        font-size: 1.5vw;
+       }
+       #orderNav{
+           margin: 30px;
+       }
+       .page-link{
+           color: black;
+           font-family: 'Kaushan Script', cursive; 
+       }
+       .list-group-item{
+            border: none;
+            font-family: 'Kaushan Script', cursive;
+            font-size: 25px;
+        }
+        .list-group a{
+          text-decoration: none;
+        }
+        #footer{
+            border-top: 2px dashed black;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 타이틀 -->
+        <div class="row">
+            <div class="col">
+                <div class="text">
+                    <p><strong>This is
+                            <br>City Night Gallery
+                        </strong>
+                    </p>
+                </div>
+                <div class="btnBox">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        Subscribe
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title m-auto" id="exampleModalLabel">Subscribe to us</h5>
+                                    <button type="button" class="btn-close m-0" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Username"
+                                            aria-label="Username">
+                                        <span class="input-group-text">@</span>
+                                        <input type="text" class="form-control" placeholder="e-mail"
+                                            aria-label="Server">
+                                    </div>
+
+                                    <div class="input-group">
+                                        <span class="input-group-text">Comment</span>
+                                        <textarea class="form-control" aria-label="With textarea"></textarea>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-dark">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 네비바 -->
+        <div class="row">
+            <div class="col-12 d-md-none">
+                <nav class="navbar navbar-expand-lg navbar navbar-dark" style="background-color: none;">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">
+                            <img id="navImg" src="images/moon-g56777b9c1_1280.png">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Gallery</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Goods</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+             </nav>
+            </div>
+    </div>
+    <!-- 콘텐츠 -->
+    <div class="row">
+        <div class="col-12">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
+                </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="headTxt">
+                                <p><strong>AND THIS IS A<br>
+                                    CITY NIGHT</strong></p>
+                            </div>
+                           <div class="headTxt2">
+                               <p>Erat nimis difficile facere, fortasse bene egi</p>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="conImg">
+                                <img id="mainImg" src="images/cyberpunk-g54d1e9331_1920.jpg">
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="conBtn" class="col-12">
+                            <a href="#"><button type="button" class="btn btn-outline-dark">Full Story</button></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="txt1">
+                                <p><strong>FIRST STORY</strong></p>
+                            </div>
+                            <div class="txtImg1 d-flex justify-content-center ">
+                                <img src="images/hong-kong-g6e1f515a6_1920.jpg" alt="">
+                            </div>
+                            <div class="txt2 d-flex justify-content-center">
+                                <p>Nescio si hoc est mihi</p>
+                            </div>
+                            <div class="txtBtn d-flex justify-content-center">
+                                <a href="#"><button type="button" class="btn btn-outline-dark">More</button></a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="txt1">
+                                <p><strong>SECOND STORY</strong></p>
+                            </div>
+                            <div class="txtImg1 d-flex justify-content-center">
+                                <img src="images/japan-ge9b681144_1920.jpg" alt="">
+                            </div>
+                            <div class="txt2 d-flex justify-content-center">
+                                <p>Quomodo exstent cum hoc situ?</p>
+                            </div>
+                            <div  class="txtBtn d-flex justify-content-center">
+                                <a href="#"><button type="button" class="btn btn-outline-dark">More</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="txt1">
+                                <p><strong>THIRD STORY</strong></p>
+                            </div>
+                            <div class="txtImg1 d-flex justify-content-center ">
+                                <img src="images/castelmezzano-g3eccf322e_1920.jpg" alt="">
+                            </div>
+                            <div class="txt2 d-flex justify-content-center">
+                                <p>Durum est, vere difficile est</p>
+                            </div>
+                            <div class="txtBtn d-flex justify-content-center">
+                                <a href="#"><button type="button" class="btn btn-outline-dark">More</button></a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="txt1">
+                                <p><strong>FOURTH STORY</strong></p>
+                            </div>
+                            <div class="txtImg1 d-flex justify-content-center">
+                                <img src="images/paris-gb62677f93_1920.jpg" alt="">
+                            </div>
+                            <div class="txt2 d-flex justify-content-center">
+                                <p>salvum me io io</p>
+                            </div>
+                            <div  class="txtBtn d-flex justify-content-center">
+                                <a href="#"><button type="button" class="btn btn-outline-dark">More</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="txt1">
+                                <p><strong>FIFTH STORY</strong></p>
+                            </div>
+                            <div class="txtImg1 d-flex justify-content-center ">
+                                <img src="images/shop-ge2ec8a4a8_1920.jpg" alt="">
+                            </div>
+                            <div class="txt2 d-flex justify-content-center">
+                                <p>Miror si hoc facere possum vivi</p>
+                            </div>
+                            <div class="txtBtn d-flex justify-content-center">
+                                <a href="#"><button type="button" class="btn btn-outline-dark">More</button></a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="txt1">
+                                <p><strong>SIXTH STORY</strong></p>
+                            </div>
+                            <div class="txtImg1 d-flex justify-content-center">
+                                <img src="images/architecture-g275876a9d_1920.jpg" alt="">
+                            </div>
+                            <div class="txt2 d-flex justify-content-center">
+                                <p>Tam durum est,<br> quot horis cum hoc luctavisti?</p>
+                            </div>
+                            <div  class="txtBtn d-flex justify-content-center">
+                                <a href="#"><button type="button" class="btn btn-outline-dark">More</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center">
+                            <nav id="orderNav" aria-label="Page navigation example">
+                                <ul class="pagination pagination-lg">
+                                  <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                      <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                  </li>
+                                  <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                  <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                      <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                  </li>
+                                </ul>
+                              </nav>
+                        </div>
+                    </div>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div id="footer" class="row">
+        <div class="col d-none d-md-block">
+            <div class="row">
+                <div class="col-12 col-md-4 d-flex justify-content-center">
+                    <ul class="list-group">
+                        <a href="#">
+                            <li class="list-group-item">Company</li>
+                        </a>
+                        <a href="#">
+                            <li class="list-group-item">History</li>
+                        </a>
+                        <a href="#">
+                            <li class="list-group-item">News</li>
+                        </a>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-4 d-flex justify-content-center">
+                    <ul class="list-group">
+                        <a href="#">
+                            <li class="list-group-item">With us</li>
+                        </a>
+                        <a href="#">
+                            <li class="list-group-item">Design</li>
+                        </a>
+                        <a href="#">
+                            <li class="list-group-item">Developer</li>
+                        </a>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-4 d-flex justify-content-center">
+                    <ul class="list-group">
+                        <a href="#">
+                            <li class="list-group-item">Service</li>
+                        </a>
+                        <a href="#">
+                            <li class="list-group-item">Customer</li>
+                        </a>
+                        <a href="#">
+                            <li class="list-group-item">Call</li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
