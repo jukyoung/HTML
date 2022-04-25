@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미니 단어장</title>
+</head>
+<body>
+    <script>
+        // switch문을 활영하여 사용자가 한글 단어를 입력하면
+        //  그 단어에 해당하는 영단어를 감싼 p 태그 찍어내기
+        let fruit = prompt("단어를 입력하세요(사과, 포도, 딸기, 수박, 귤)");
+
+        switch(fruit){
+            case"사과" :
+             document.write("<p style='border:1px solid black'>Apple</p>"); 
+             break;
+            case"포도" :
+             document.write("<p style='border:1px solid black'>Grape</p>"); 
+             break;
+            case"딸기" :
+             document.write("<p style='border:1px solid black'>Strawberry</p>");
+              break;
+            case"수박" :
+             document.write("<p style='border:1px solid black'>Watermelon</p>");
+              break;
+            case"귤" :
+              document.write("<p style='border:1px solid black'>Tangerine</p>");
+        }
+    </script>
+</body>
+</html>
