@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자의 입력을 통한 상자 만들기</title>
+</head>
+<body>
+    <script>
+        // 사용자에게 색을 입력받아 해당색의 박스 만들기
+        let input = prompt("색깔을 입력하세요 (검정, 빨강, 초록, 파랑)");
+        if(input == "검정"){
+            document.write("<div style='background-color: black; width: 100px; height: 100px; color: white;'>검정</div>")
+        }else if(input =="빨강"){
+            document.write("<div style='background-color: red; width: 100px; height: 100px;'>빨강</div>")
+        }else if(input =="초록"){
+            document.write("<div style='background-color: green; width: 100px; height: 100px;'>초록</div>")
+        }else if(input == "파랑"){
+            document.write("<div style='background-color: blue; width: 100px; height: 100px;'>파랑</div>")
+        }
+            
+    </script>
+</body>
+</html>
