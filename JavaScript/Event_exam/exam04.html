@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>덧셈 계산기</title>
+    <style>
+        .box{
+            border: 1px solid black;
+            width: 500px;
+            height: 250px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+    <h3>덧셈 계산기</h3>
+    <input type="text" id="num1"><br>
+    <input type="text" id="num2"><br>
+    <button type="button" id="btn">더하기</button>
+    <h3>결과</h3>
+    <div id="rs"></div>
+</div>
+
+    <script>
+        let num1 = document.getElementById("num1");
+        let num2 = document.getElementById("num2");
+        let btn = document.getElementById("btn");
+        let rs = document.getElementById("rs");
+
+        
+
+        btn.onclick = function(){
+            // 요소.value -> String 값
+            // 숫자형으로 변환
+            // 1. parseInt() 
+            // rs.innerHTML = parseInt(num1.value) + parseInt(num2.value);
+           let n1 = parseInt(num1.value);
+           let n2 = parseInt(num2.value);
+
+           rs.innerHTML = n1 +n2;
+
+           // 2. Number()의 생성자
+           rs.innerHTML = Number(num1.value) + Number(num2.value);
+        }
+
+    </script>
+
+</body>
+</html>

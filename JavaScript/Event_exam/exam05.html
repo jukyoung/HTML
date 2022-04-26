@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비밀번호 유효성</title>
+    <style>
+        .pwBox{
+            border: 1px solid black;
+            width: 300px;
+            height: 250px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="pwBox">
+    <h3>비밀번호 유효성 검사</h3>
+    <input type="password" id="pw1">
+    <input type="password" id="pw2"><br>
+    <button type="button" id="pwBtn">확인</button>
+    <h3>결과</h3>
+    <div id="rs"></div>
+  </div> 
+  <script>
+      let pw1 = document.getElementById("pw1");
+      let pw2 = document.getElementById("pw2");
+      let pwBtn = document.getElementById("pwBtn");
+      let rs = document.getElementById("rs");
+
+      pwBtn.onclick = function(){
+          //pw1 과 pw2의 value 값이 동일한지 아닌지에 따라 결과값을 달리해줌
+
+          // == : 값 자체만 가지고 equal 비교 -> null / undefined
+          // === : 값 + 자료형을 모두 equal 비교 (strict equal) -> 그 외 다른 값
+          if(pw1.value === pw2.value){
+              rs.innerHTML = "패스워드 일치";
+              rs.style.color = "green";
+              
+          }else{
+              rs.innerHTML = "패스워드 불일치";
+              rs.style.color = "red";
+          }
+
+      };
+
+
+  </script>
+</body>
+</html>

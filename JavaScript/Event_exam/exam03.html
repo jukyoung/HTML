@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Btn Div</title>
+    <style>
+        #box{
+            border: 1px solid black;
+            height: 50px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="txt">
+    <button type="button" id="btn">버튼</button>
+    <div id="box"></div>
+
+    <script>
+        let txt = document.getElementById("txt");
+        let btn = document.getElementById("btn");
+        let box = document.getElementById("box");
+
+        btn.onclick = function(){
+            let input = txt.value;
+            box.innerHTML = input;
+            txt.value ="";
+        };
+/*
+        btn.addEventListener("click", function(){
+            box.innerHTML = txt.value;
+            txt.value ="";
+        });*/
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key input</title>
+</head>
+<body>
+    <input type="text" id="targetInput">
+    <script>
+        let targetInput = document.getElementById("targetInput");
+
+        // 키보드 입력에 대한 이벤트 감지
+        // keydown, keypress / keyup
+        // keydown / kepress : 키보드 입력하는 순간 (키보드가 눌리는 순간)
+        // keyup : 키보드 입력 후 (키보드가 눌리고 올라오는 순간)
+        // targetInput.onkeyup = function(){
+        //     targetInput.style.backgroundColor = "pink";
+        // }
+
+        // focus :  input 창에 커서가 깜빡이고 있는 상태
+        targetInput.onfocus = function(){
+            // x축 offset / y축 offset / blur 처리값 / 색
+            targetInput.style.boxShadow = "4px 4px 4px dodgerblue";
+        }
+        // blur : focus가 풀린 상태
+        targetInput.onblur = function(){
+            targetInput.style.boxShadow = "none";
+        }
+
+    </script>
+</body>
+</html>

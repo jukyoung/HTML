@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Btn Input</title>
+</head>
+<body>
+    <input type="text" id="txtInput">
+    <button type="button" id="btn">버튼</button>
+    <script>
+        let txtInput = document.getElementById("txtInput");
+        let btn = document.getElementById("btn");
+
+        /*
+        let input =txtInput.value;
+        btn.onclick =function(){
+            console.log(input); // 아무것도 안뜸
+        }
+        -> 버튼 클릭전에 input 값을 가져오고 있음
+
+        따라서
+        버튼을 누른 그 시점에 input 안에 있는 value 값을 가져와서 
+        alert 에 띄워주는 작업을 해야 함.
+
+        btn.onclick =function(){
+            let input = txtInput.value;
+            console.log(input); // 이렇게 해야 뜸
+            alert(input);
+        }
+        
+        */
+            btn.onclick = function(){
+                alert(txtInput.value);
+            };
+        /*
+            btn.addEventListener("click", function(){
+                alert(txtInput.value);
+            });
+        };*/
+
+
+    </script>
+</body>
+</html>
