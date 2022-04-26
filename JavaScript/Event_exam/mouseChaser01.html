@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #mouseChaser{
+            /* document 라는 요소를 기준으로 위치를 이동하기 위해서 absoulte */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            background-color: darkgreen;
+            border-radius: 50%;
+            transform: translate(-50%, -50%); 
+            /* 도형을 중앙으로 위치 시켜주기 */
+            display: none; /* 요소를 숨기겠다 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 우선 도형 먼저 만들기 -->
+    <div id="mouseChaser"></div> 
+
+    <script>
+        let mouseChaser = document.getElementById("mouseChaser")
+        // 화면 전체 : document
+        // 마우스 움직임이 감지 : mousemove
+        document.onmousemove = function(e){ // 매개변수 넘겨서 이벤트에 대한 정보값 출력
+           // console.log(e);
+            // e -> pageX / pageY = 마우스 커서의 위치값
+            console.log("x : " + e.pageX);
+            console.log("y : " + e.pageY);
+            mouseChaser.style.display = "block"; 
+            // 마우스의 움직임이 감지되면 div가 가지고 있는 default 값으로 바꿔주기
+            mouseChaser.style.top = e.pageY + "px"; // px -> 픽셀값을 세팅해야하므로 붙여주기
+            mouseChaser.style.left = e.pageX + "px";
+        }
+        // pageX : 커서가 움직일때 커서가 위치하고 있는 x축 좌표값
+        // pageY : 커서가 움직일때 커서가 위치하고 있는 Y축 좌표값
+        // 도형을 마우스 좌표값으로 이동시켜주기
+        // top : Y축 left : X축
+
+        // 화면 밖으로 마우스가 나가면 다시 도형을 숨겨주기
+        document.onmouseleave = function(){
+            mouseChaser.style.display = "none";
+        }
+
+    </script>
+</body>
+</html>
