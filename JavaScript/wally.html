@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숨은그림 찾기</title>
+    <style>
+        #ok{
+           
+        }
+    </style>
+</head>
+<body>
+    <img src="196271_195602_4744.jpg" id="find">
+    <script>
+
+        document.onclick = function(e){
+            console.log("x : " +e.pageX);
+            console.log("y: " +e.pageY);
+         
+            if(e.pageX <= 386 && e.pageX >= 320 ){
+                if(e.pageY >= 143 && e.pageY <= 191){
+                    alert("신문보는 사람 찾기 성공!");
+                }
+            }else if(e.pageX <= 187 && e.pageX >= 98 ){
+                if(e.pageY >= 492 && e.pageY <= 554){
+                    alert("주스들고 있는 사람 찾기 성공!");
+                }
+            }else if(e.pageX <= 584 && e.pageX >= 518 ){
+                if(e.pageY >= 95 && e.pageY <= 185){
+                    alert("미니 풀장에 발 담근 사람 찾기 성공!");
+                }
+            }
+        }
+        
+
+    </script>
+</body>
+</html>
