@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리마트 장바구니</title>
+    <script>
+
+        window.onload = function(){
+            let list = [];
+
+            let shop = document.getElementById("shop");
+
+            document.getElementById("btnAdd").onclick = function(){
+                let txtAdd = document.getElementById("txtAdd");
+                if(txtAdd.value !== "" ){
+                    list.push(txtAdd.value);
+                    shop.innerHTML = list;
+                    txtAdd.value = "";
+                }
+                    txtAdd.focus();  
+            }
+            document.getElementById("btnDel").onclick = function(){
+                let txtDel = document.getElementById("txtDel");
+ 
+                if(txtDel.value !== ""){
+                    let index = list.indexOf(txtDel.value);
+                    list.splice(index, 1);
+                    shop.innerHTML = list;
+                    txtDel.value = "";
+                }
+                    txtDel.focus();
+            }
+            
+        }
+
+
+    </script>
+</head>
+<body>
+    <div>
+        <fieldset>
+            <legend>
+                리마트 쇼핑 장바구니
+            </legend>
+            <div id="shop"></div>
+    </div>
+    
+    </fieldset>
+    <input type="text" id="txtAdd" placeholder="추가할 아이템을 입력하세요.">
+    <button type="button" id="btnAdd">추가하기</button><br>
+    <input type="text" id="txtDel" placeholder="삭제할 아이템을 입력하세요.">
+    <button type="button" id="btnDel">삭제하기</button>
+</body>
+</html>

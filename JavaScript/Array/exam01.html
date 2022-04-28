@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과일 바구니</title>
+    <script>
+        // 코드의 실행순서 : 위에서부터 아래로 실행
+
+         let fruits = ['Apple', 'Orange', 'Tomato', 'Banana', 'Grape', 'Strawberry'];
+
+         // window : 웹브라우저의 모든 요소를 담는 객체
+         // window.onload : 웹브라우저의 모든 요소들이 로드(준비)가 완료됐을때
+         // 오른쪽의 function을 실행해라
+         // 즉 웹 브라우저 요소가 모두 준비완료되면 그때 function의 코드를 실행
+         
+         window.onload = function(){
+            let list = document.getElementById("list");
+         // Cannot set properties of null -> div list를 가져오지 못함
+         // script가 실행될 당시에는 아직 div가 만들어지지 않은 상태라 에러발생
+            list.innerHTML = fruits;
+         }
+         
+         
+    </script>
+</head>
+
+<body>
+    <div>
+        <fieldset>
+            <legend>
+                Fruits
+            </legend>
+            <div id="list"></div>
+        </fieldset>
+    </div>
+    <input type="text" id="front" placeholder="앞에 추가할 값">
+    <button type="button" id="frontAdd">앞쪽에 추가</button>
+    <button type="button" id="frontDelete">앞에서 삭제</button><br>
+    <input type="text" id="back" placeholder="뒤에 추가할 값">
+    <button type="button" id="backAdd">뒷쪽에 추가</button>
+    <button type="button" id="backDelete">뒤에서 삭제</button>
+
+    <script>
+        let front = document.getElementById("front");
+        let frontAdd = document.getElementById("frontAdd");
+        let frontDelete = document.getElementById("frontDelete");
+        let back = document.getElementById("back");
+        let backAdd = document.getElementById("backAdd");
+        let backDelete = document.getElementById("backDelete");
+
+        frontAdd.onclick = function () {
+            fruits.unshift(front.value);
+            list.innerHTML = fruits;
+            front.value ="";
+        }
+        frontDelete.onclick = function () {
+            fruits.shift();
+            list.innerHTML = fruits;
+        }
+        backAdd.onclick = function () {
+            fruits.push(back.value);
+            list.innerHTML = fruits;
+            front.value ="";
+        }
+        backDelete.onclick = function () {
+            fruits.pop();
+            list.innerHTML = fruits;
+        }
+    </script>
+</body>
+
+</html>
