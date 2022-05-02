@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Webtoon</title>
+    <script src="webtoonData.js"></script>
+</head>
+<body>
+    <table class="table" id="webtoonTbl">
+        <thead>
+          <tr>
+            <th scope="col">제목</th>
+            <th scope="col">작가</th>
+            <th scope="col">평점</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+      <script>
+      
+      // 제목 작가 평점
+      let regex = /title="(.+?)".+?this\)">(.+?)<\/a>.+?<strong>(.+?)<\/strong>/gs;
+      //let rs = regex.exec(dataMon);
+      let temp ="";
+    //   while(regex.exec(dataMon) !== null){
+        //   temp += "<tr>"
+        //   + "<td>" +RegExp.$1 + "</td>"
+        //   + "<td>" +RegExp.$2 + "</td>"
+        //   + "<td>" +RegExp.$3 + "</td>"
+        //   + "</tr>"
+        //요소.innerHTML += ~~; 텍스트로 넣어주지만 요소로 바꿔줘서 이걸 사용해도 사용해도 됨
+        // -> 텍스트값을 쓰면 오타에 영향을 많이 받음
+    //   }
+      // append() -> 특정 요소를 기준으로 그 요소 안쪽에다가 
+      // 새로운 값을 기존의 자식 요소 뒤로 추가하고 싶을때 사용하는 함수
+      /*
+       // A.append(B)
+        <A>
+            <C></C>
+            <B></B>
+        </A>
+
+        
+      */
+      
+      //document.getElementById("webtoonTbl").innerHTML = temp; 
+    //   document.getElementById("webtoonTbl").append(temp);
+      while(regex.exec(dataMon) !== null){
+          // createElement() : html 요소를 생성하는 함수
+          // 1. tr 요소 자체를 생성
+          // 2. td 요소도 생성
+          // 3. tr 요소에다 td 요소를 추가하고 -> tr 을 table 에 추가
+          let tr = document.createElement("tr");
+          // setAttribute(속성명, value)
+          tr.setAttribute("class", "webtoonTr");
+          // 타이틀 데이터 넣어줄 td 생성 후 데이터 넣기
+          let title = document.createElement("td");
+          title.innerHTML = RegExp.$1;
+          // 작가 데이터 넣어줄 td 생성 후 데이터 넣기
+          let writer = document.createElement("td");
+          writer.innerHTML = RegExp.$2;
+          // 평점 데이터 넣어줄 td 생성 후 데이터 넣기
+          let grade = document.createElement("td");
+          grade.innerHTML = RegExp.$3;  
+          // tr 태그의 자식으로 3개의 td 태그를 넣어주고 있는 작업
+          tr.append(title, writer, grade);
+          // 마지막으로 완성된 tr태그를 테이블 안쪽에 추가하는 작업
+          document.getElementById("webtoonTbl").append(tr);
+      }
+
+      </script>
+      
+      
+</body>
+</html>
