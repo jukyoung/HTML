@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <title>Exam04</title>
+</head>
+<body>
+    <p>1번</p>
+    <p>2번</p>
+    <p>3번</p>
+    <p>4번</p>
+    <input id="line" type="text" placeholder="줄 번호를 입력하세요.">
+    <input id="colorTxt" type="text" placeholder="색을 입력하세요.">
+    <button id="btn">적용</button>
+    <script>
+        $("#btn").on("click", function(){
+            let line = $("#line").val();
+            $("p").eq(line-1).css("background-color", $("#colorTxt").val());
+            //또는 $("p:nth-child("+line+")").css(...)
+            $("#line").val("");
+            $("#colorTxt").val("");
+
+        })
+    </script>
+</body>
+</html>

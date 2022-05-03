@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        .box {
+            border: 1px solid black;
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <button id="upAdd">위로 추가 하기</button>
+    <button id="downAdd">아래로 추가 하기</button>
+    <script>
+
+        let count = 1;
+        $("#upAdd").on("click", function () {
+            $(".box").append("Contents Message Here : " + count + "<br>");
+            count++;
+            $(".box").css("overflow", "auto");
+            $(".box").scrollTop(0);
+        })
+        $("#downAdd").on("click", function () {
+            $(".box").prepend("Contents Message Here : " + count + " <br>");
+            count++;
+            $(".box").css("overflow", "auto");
+            $(".box").scrollTop($(document).height());
+        })
+    </script>
+</body>
+
+</html>
