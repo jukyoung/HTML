@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <title>Show Hide</title>
+    <style>
+        .innerDiv{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="innerDiv">Div1</div>
+    <div class="btnDiv">
+        <button id="btnShow">Div1 보이기</button>
+        <button id="btnHide">Div1 감추기</button>
+        <button id="btnToggle">Div1 토글</button>
+    </div>
+    <script>
+        // hide() : display none 의 속성을 적용
+        $("#btnHide").click(function(){
+            $(".innerDiv").hide(1000);
+        })
+        // show() : display block 의 속성을 적용
+        $("#btnShow").click(function(){
+            $(".innerDiv").show(1000);
+        })
+        // toggle() : hide() + show()
+        $("#btnToggle").click(function(){
+            $(".innerDiv").toggle(1000);
+        })
+        
+    </script>
+</body>
+</html>

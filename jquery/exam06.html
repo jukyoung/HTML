@@ -9,32 +9,49 @@
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <title>Document</title>
     <style>
-        .box {
+        .container{
+            width: 400px;
+            height: 400px;
+        }
+        .contents {
             border: 1px solid black;
-            width: 500px;
-            height: 500px;
+            width: 100%;
+            height: 90%;
+            overflow-y: auto;
         }
     </style>
 </head>
 
 <body>
-    <div class="box"></div>
-    <button id="upAdd">위로 추가 하기</button>
-    <button id="downAdd">아래로 추가 하기</button>
+<div class="container">
+    <div class="contents"></div>
+    <button id="prepend">위로 추가 하기</button>
+    <button id="append">아래로 추가 하기</button>
+</div>
     <script>
-
         let count = 1;
-        $("#upAdd").on("click", function () {
-            $(".box").append("Contents Message Here : " + count + "<br>");
-            count++;
-            $(".box").css("overflow", "auto");
-            $(".box").scrollTop(0);
-        })
-        $("#downAdd").on("click", function () {
-            $(".box").prepend("Contents Message Here : " + count + " <br>");
-            count++;
-            $(".box").css("overflow", "auto");
-            $(".box").scrollTop($(document).height());
+        // 위로 추가하기
+        $("#prepend").on("click", function(){
+            let content = "<div>Contents Message Here : " + count++ +"</div>";
+            $(".contents").prepend(content);
+            // 위에 새로운 요소가 추가될 경우 스크롤이 최상단에 붙어 있어야 함
+            // scroll 을 상단으로 부터 0만큼 떨어지는 위치로 이동
+            $(".contents").scrollTop(0); 
+            // 인자값으로 0을 줌 -> scroll height에서 top 기준으로 0만큼 떨어져라
+           
+        });
+        // 아래로 추가하기
+        $("#append").on("click", function(){
+            let content = "<div>Contents Message Here : " + count++ +"</div>";
+            $(".contents").append(content);
+            // prop(속성명) -> 그 속성에 들어있는 value 반환
+            // 예) { menu(속성명) : "americano"(value)}
+            // prop("scrollHeight") : 스크롤의 높이값 반환
+            console.log( $(".contents").prop("scrollHeight"))
+            // -> 현재 default 상태(스크롤이 아직 안생길때)에서는 요소의 높이값과 동일하게 일치시킴
+            let scrollH = $(".contents").prop("scrollHeight");
+            // 스크롤의 높이값을 scrollTop 함수에 넘겨주면 스크롤바를 가장 아래쪽으로 내려주는 것과 같음.
+            $(".contents").scrollTop(scrollH);
         })
     </script>
 </body>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <title>Exam08</title>
+    <style>
+        .container {
+            border: 1px dotted dodgerblue;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- div로 틀은 구성
+    파일 추가 버튼을 누르면 아래줄로 파일태그와 삭제 버튼 추가
+    삭제 버튼 누르면 한 줄이 삭제 -->
+    <div class="container">
+        <div class="title">
+            <span>파일 추가</span>
+            <button id="fileInput">파일 추가</button>
+        </div>
+        <!-- <input type="file"> -->
+    </div>
+    <script>
+        $("#fileInput").on("click", function () {
+            let fileSelect = "<div class='contents'><input type = 'file'> <button>삭제</button></div>"
+            // id 값은 고유값이기 때문에 추가할때마다 똑같은 아이디 생기는 것 보단
+            // class 명을 이용하기
+            $(".container").append(fileSelect);
+        })
+        $(".container").on("click", ".contents >button", function (e) {
+            $(e.target).parents("#contents").remove();
+        })
+        // 혹은 div에 클래스 넣지 말고 버튼에 class 넣은뒤
+        // $(".container").on("click", ".button클래스명", function (e) {
+        //     $(e.target).parent("div").remove();
+        // })
+    </script>
+</body>
+
+</html>
