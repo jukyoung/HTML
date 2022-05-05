@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <title>Emoticon</title>
+    <style>
+        *{box-sizing: border-box;}
+        .box{
+            border: 1px solid black;
+            /* block 속성을 가지고 있는 요소를 inline 특성을 갖게 만들어줌 */
+            display: inline-block;
+        }
+        .box > .row{
+            width: 300px;
+            height: 100px;
+        }
+        .box .col{
+            width: 100px;
+            height: 100px;
+            float: left;
+        }
+        .imgs{
+            width: 100%;
+            height: 100%;
+            padding: 5px;
+            cursor: pointer;
+        }
+        #hideBtn{
+            text-align: left;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="row">
+            <div class="col">
+                <img class="imgs" src="/jquery/img/e1.png" alt="">
+            </div>
+            <div class="col">
+                <img class="imgs" src="/jquery/img/e2.png" alt="">
+            </div>
+            <div class="col">
+                <img class="imgs" src="/jquery/img/e3.png" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img class="imgs" src="/jquery/img/e4.png" alt="">
+            </div>
+            <div class="col">
+                <img class="imgs" src="/jquery/img/e5.png" alt="">
+            </div>
+            <div class="col">
+                <img class="imgs" src="/jquery/img/e6.png" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img class="imgs" src="/jquery/img/e7.png" alt="">
+            </div>
+            <div class="col">
+                <img class="imgs" src="/jquery/img/e8.png" alt="">
+            </div>
+            <div class="col">
+                <img class="imgs" src="/jquery/img/e9.png" alt="">
+            </div>
+        </div>
+    </div>
+  <div class="btnBox">
+    <div id="hideBtn">😊</div>
+  </div>
+    <script>
+        $("#hideBtn").click(function(){
+            $(".box").fadeToggle();
+        })
+    </script>
+</body>
+</html>
